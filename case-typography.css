@@ -1,0 +1,195 @@
+/* Stronger title hierarchy across project detail pages only. */
+#main-content:is(.brand-upgrade-case, .performance-case, .douyin-case, .campaign-case, .three-d-case) :is(h1, h2) {
+  font-weight: 800;
+  -webkit-text-stroke: .2px currentColor;
+}
+#main-content:is(.brand-upgrade-case, .performance-case, .douyin-case, .campaign-case, .three-d-case) :is(h3, h4) {
+  font-weight: 750;
+  -webkit-text-stroke: .12px currentColor;
+}
+/* Keep blue title fragments blue when they inherit the extra weight. */
+#main-content:is(.brand-upgrade-case, .performance-case, .douyin-case, .campaign-case, .three-d-case) :is(h1, h2, h3, h4) span {
+  -webkit-text-stroke-color: currentColor;
+}
+#main-content.brand-upgrade-case .bu-section-number {
+  -webkit-text-stroke-width: inherit;
+}
+/* Brand titles and key terms follow the same weight as the opening title. */
+#main-content.brand-upgrade-case :is(h1, h2, h3, h4, .bu-keywords li, .bu-label, .bu-adaptation dt, .bu-overview strong, .bu-ratios strong) {
+  font-weight: 800;
+  -webkit-text-stroke: .2px currentColor;
+}
+
+/* Other cases use the approved brand-page hierarchy. */
+#main-content:is(.performance-case, .douyin-case, .campaign-case, .three-d-case) {
+  --case-heading-size: clamp(1.8rem, 3vw, 2.7rem);
+  --case-subtitle-size: clamp(1.2rem, 1.85vw, 1.7rem);
+}
+#main-content:is(.performance-case, .douyin-case, .campaign-case, .three-d-case) :is(h1, h2, h3, h4, .perf-tag, .three-d-label, .perf-metrics strong, .three-d-metrics strong, .perf-creative-metrics dd) {
+  font-weight: 800;
+  -webkit-text-stroke: .2px currentColor;
+}
+#main-content:is(.performance-case, .douyin-case, .campaign-case, .three-d-case) :is(h3, h4) {
+  font-size: var(--case-subtitle-size);
+  line-height: 1.45;
+  letter-spacing: -.035em;
+}
+#main-content:is(.performance-case, .douyin-case, .campaign-case, .three-d-case) p:where(:not(.perf-lead):not(.douyin-lead):not(.campaign-lead):not(.three-d-lead)) { font-size: 1rem; }
+#main-content:is(.performance-case, .douyin-case, .campaign-case, .three-d-case) :is(.perf-caption, .campaign-caption, .three-d-caption, .perf-metric-note, .three-d-note, .perf-source-note, .perf-source-label, .douyin-showcase-caption) { font-size: .875rem; }
+#main-content .case-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 28px;
+  padding-top: 0;
+  text-align: left;
+}
+#main-content .case-heading h2 {
+  margin: 0;
+  font-size: var(--case-heading-size);
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+#main-content :is(.case-heading h2, .case-step-title) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  text-align: left;
+}
+#main-content .case-step-title > span {
+  color: inherit;
+  font-size: inherit;
+  display: block;
+  margin: 0;
+}
+#main-content :is(.case-heading h2, .case-step-title) > .case-number {
+  color: var(--text);
+  opacity: 1;
+  font-size: 1.2em;
+  font-weight: inherit;
+  line-height: 1.125;
+  letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+  -webkit-text-stroke-width: inherit;
+}
+#main-content .case-heading > p {
+  margin: 0;
+  max-width: none;
+  padding-top: 3px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+#main-content .case-heading-title-only { grid-template-columns: minmax(0, 1fr); }
+#main-content .case-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 2px 0 0;
+  color: var(--accent);
+  flex: 0 0 32px;
+}
+#main-content .case-icon-card > .case-icon { align-self: center; margin-top: 0; }
+#main-content .case-icon svg { display: block; width: 100%; height: 100%; }
+#main-content .case-icon-card {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  align-content: start;
+  text-align: left;
+}
+#main-content .case-icon-card h3 { margin: 0; }
+#main-content .case-icon-card > p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+#main-content .case-icon-title { display: flex; align-items: center; gap: 14px; }
+#main-content .case-icon-title .case-icon { margin-top: 0; }
+#main-content .campaign-goals .case-icon { color: var(--on-accent); }
+#main-content :is(.perf-workflow, .campaign-workflow) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#main-content :is(.perf-workflow, .campaign-workflow) p { font-size: 1rem; }
+#main-content.douyin-case :is(.douyin-framework, .douyin-results) {
+  border-block: 1px solid var(--line);
+  padding-block: 30px;
+  gap: 30px;
+}
+#main-content.douyin-case .douyin-framework article {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  color: var(--text);
+}
+#main-content.douyin-case :is(.douyin-framework, .douyin-results) article + article {
+  border-left: 1px solid var(--line);
+  padding-left: 30px;
+}
+#main-content.douyin-case .douyin-framework p { color: var(--muted); }
+#main-content.douyin-case .douyin-results article { border-top: 0; padding-top: 0; }
+#main-content.douyin-case :is(.douyin-showcase, .douyin-card-grid article, .douyin-panel) {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  text-align: left;
+}
+#main-content.douyin-case .douyin-showcase-caption { text-align: left; }
+#main-content.douyin-case :is(.douyin-scene-pair h3, .douyin-hierarchy) { text-align: left; }
+#main-content.douyin-case .douyin-meta dd { font-size: 1rem; font-weight: 400; }
+#main-content:is(.performance-case, .douyin-case, .campaign-case, .three-d-case) :is(.media-figure, .media-figure img, .campaign-block-art, .campaign-block-art img) {
+  background: transparent;
+  border: 0;
+}
+#main-content:is(.performance-case, .three-d-case) :is(.perf-hero, .three-d-hero) { align-items: start; }
+#main-content.campaign-case .campaign-hero { align-items: start; }
+#main-content :is(.perf-metrics strong, .three-d-metrics strong) {
+  font-size: clamp(2.65rem, 4.5vw, 4rem);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.035em;
+}
+#main-content.performance-case .perf-creative-metrics dd {
+  font-size: clamp(1.65rem, 2.7vw, 2.45rem);
+  line-height: 1.3;
+  letter-spacing: -.035em;
+}
+#main-content.performance-case .perf-best {
+  font-size: clamp(1.35rem, 1.85vw, 1.7rem);
+  font-weight: 800;
+  -webkit-text-stroke: .2px currentColor;
+}
+#main-content .case-count { white-space: nowrap; font-variant-numeric: tabular-nums; }
+#main-content :is(.perf-creative-metrics dt, .perf-tag, .three-d-label, .perf-caption, .campaign-caption, .three-d-caption) { font-size: .875rem; }
+#main-content :is(.perf-closing, .campaign-closing, .three-d-closing) h2 { font-size: var(--case-heading-size); }
+#main-content.performance-case .perf-workflow { border-bottom: 0; padding-bottom: 12px; }
+#main-content.performance-case .perf-closing { border-top: 0; margin-top: 24px; padding-top: 24px; }
+#main-content.performance-case .perf-section[aria-labelledby="perf-review"] { padding-top: clamp(40px, 4.5vw, 64px); }
+#main-content.douyin-case .douyin-section[aria-labelledby="douyin-framework-title"] { padding-top: 48px; }
+#main-content.douyin-case :is(.douyin-scene-pair h3, .douyin-phone-pair h4, .douyin-phones > p, .douyin-motion > p) { text-align: center; }
+#main-content.three-d-case .three-d-scene-image { width: 100%; justify-self: start; }
+#main-content.three-d-case .three-d-chip-image img { object-position: left center; }
+#main-content.campaign-case .campaign-platform-heading { margin-top: 28px; }
+#main-content.campaign-case .campaign-workflow { border: 0; background: var(--surface); padding: clamp(24px, 3vw, 40px); }
+@media (max-width: 1000px) and (min-width: 721px) {
+  #main-content :is(.perf-principles, .three-d-principles, .douyin-framework, .douyin-results) { gap: 20px; }
+  #main-content :is(.perf-principles, .three-d-principles, .douyin-framework, .douyin-results) article + article { padding-left: 20px; }
+}
+@media (max-width: 720px) {
+  #main-content .case-heading { grid-template-columns: 1fr; gap: 20px; margin-bottom: 26px; }
+  #main-content :is(.case-heading h2, .case-step-title) { gap: 8px; }
+  #main-content .case-heading > p { padding-top: 0; }
+  #main-content.douyin-case :is(.douyin-framework, .douyin-results) { grid-template-columns: 1fr; gap: 24px; }
+  #main-content.douyin-case :is(.douyin-framework, .douyin-results) article + article {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 24px 0 0;
+  }
+  #main-content.douyin-case .douyin-intro { padding-top: 112px; }
+  #main-content.douyin-case .douyin-card-grid { grid-template-columns: 1fr; }
+  #main-content :is(.perf-workflow, .campaign-workflow) { grid-template-columns: 1fr; }
+  #main-content.performance-case .perf-creative-metrics { gap: 10px; }
+  #main-content.performance-case .perf-creative-metrics dd { font-size: 1.65rem; }
+}

@@ -1,0 +1,112 @@
+.campaign-case { --campaign-gap: clamp(20px, 2.1vw, 30px); }
+.campaign-case .campaign-shell { width: min(100%, var(--max-width)); margin-inline: auto; padding: 0 clamp(20px, 6.1vw, 88px) 48px; }
+.campaign-case :is(h1,h2,h3,p,dl,dd,figure) { margin: 0; }
+.campaign-case :is(h1,h2,h3) { letter-spacing: -.035em; }
+.campaign-case p { color: var(--muted); font-size: 1.05rem; line-height: 1.85; }
+.campaign-case h2 { font-size: clamp(1.8rem, 3.2vw, 2.875rem); line-height: 1.35; }
+.campaign-case h3 { font-size: clamp(1.15rem, 1.85vw, 1.7rem); line-height: 1.5; }
+.campaign-case .campaign-eyebrow { color: var(--accent-deep); font-size: .78rem; font-weight: 600; letter-spacing: .1em; line-height: 1.6; }
+.campaign-case .media-figure { min-width: 0; margin: 0; border: 0; background: transparent; overflow: hidden; }
+.campaign-case .media-figure img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; background: transparent; }
+.campaign-case img[data-lightbox] { cursor: zoom-in; }
+.campaign-case .campaign-caption { margin-top: 18px; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+.campaign-case .campaign-hero { display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); gap: 54px; align-items: center; padding: 166px 0 64px; }
+.campaign-case .campaign-hero .campaign-eyebrow { margin-bottom: 22px; }
+.campaign-case .campaign-hero h1 { font-size: clamp(2.75rem, 5.3vw, 4.75rem); font-weight: 750; line-height: 1.22; letter-spacing: -.05em; }
+.campaign-case .campaign-lead { max-width: 555px; margin-top: 24px; font-size: clamp(1rem, 1.55vw, 1.3rem); }
+.campaign-case .campaign-cover { aspect-ratio: 1600 / 899; }
+.campaign-case .campaign-meta { display: flex; flex-wrap: wrap; gap: 20px 34px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); }
+.campaign-case .campaign-meta dt { color: var(--dim); font-size: .8rem; margin-bottom: 8px; }
+.campaign-case .campaign-meta dd { font-size: .92rem; line-height: 1.6; }
+.campaign-case .campaign-goals { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); padding-block: 30px; background: linear-gradient(110deg, var(--accent-deep), var(--accent-strong)); color: var(--on-accent); }
+.campaign-case .campaign-goals article { padding-inline: clamp(18px,2.5vw,36px); }
+.campaign-case .campaign-goals article + article { border-left: 1px solid rgba(255,255,255,.25); }
+.campaign-case .campaign-goals h2 { font-size: clamp(1.8rem,3vw,2.7rem); margin-block: 10px 14px; }
+.campaign-case .campaign-goals p { font-size: .92rem; color: var(--on-accent-muted); }
+.campaign-case .campaign-section { padding-top: clamp(60px,7vw,100px); }
+.campaign-case .campaign-section-heading { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 40px; align-items: end; margin-bottom: 36px; }
+.campaign-case .campaign-section-heading .campaign-eyebrow { margin-bottom: 12px; }
+.campaign-case :is(.campaign-visual-grid,.campaign-pair,.campaign-review) { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--campaign-gap); align-items: start; }
+.campaign-case .campaign-keyvisual { aspect-ratio: 1200 / 1680; }
+.campaign-case .campaign-scene { aspect-ratio: 6000 / 4096; }
+.campaign-case .campaign-language { display: grid; gap: 28px; margin-top: 36px; }
+.campaign-case .campaign-language article { display: flex; align-items: start; gap: 24px; }
+.campaign-case .campaign-language p { margin-top: 8px; font-size: 1rem; }
+.campaign-case .campaign-swatch { flex: 0 0 24px; height: 24px; border-radius: 50%; margin-top: 8px; }
+.campaign-case .campaign-swatch-pink { background: #f7c6c0; }
+.campaign-case .campaign-swatch-red { background: #ed3c35; }
+.campaign-case .campaign-swatch-clear { background: #e4e6ed; }
+.campaign-case .campaign-page-layout { display: grid; grid-template-columns: minmax(0,.17fr) minmax(0,.83fr); gap: 52px; align-items: start; }
+.campaign-case .campaign-page-overview h3 { margin-bottom: 20px; font-size: 1.2rem; }
+.campaign-case .campaign-longpage { position: relative; padding-right: 44px; }
+.campaign-case .campaign-longpage .media-figure { aspect-ratio: 1200 / 13207; }
+.campaign-case .campaign-marker { position: absolute; right: 0; top: var(--position); display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; color: white; background: var(--accent); font-size: .8rem; font-weight: 600; cursor: pointer; }
+.campaign-case .campaign-page-blocks { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 50px 30px; }
+.campaign-case .campaign-page-blocks article { scroll-margin-top: 120px; min-width: 0; }
+.campaign-case .campaign-page-blocks h3 { display: flex; gap: 22px; align-items: baseline; margin-bottom: 22px; }
+.campaign-case .campaign-page-blocks h3 span { color: var(--accent); font-size: 1.2rem; }
+.campaign-case .campaign-block-art { display: grid; place-items: center; aspect-ratio: 499 / 552; }
+.campaign-case .campaign-block-art img { display: block; width: 100%; height: 100%; max-height: 100%; object-fit: contain; }
+.campaign-case .campaign-flow { margin-top: 48px; padding-top: 26px; border-top: 1px solid var(--line); }
+.campaign-case .campaign-flow h3 { color: var(--accent-deep); font-size: 1.25rem; }
+.campaign-case .campaign-flow p { margin-top: 16px; }
+.campaign-case .campaign-subheading { margin-bottom: 26px; }
+.campaign-case .campaign-triptych { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--campaign-gap); align-items: start; }
+.campaign-case .campaign-triptych .media-figure { aspect-ratio: 1; }
+.campaign-case .campaign-triptych .media-figure img { width: 100%; height: 100%; }
+.campaign-case .campaign-rules { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--campaign-gap); margin-block: 32px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+.campaign-case .campaign-rules h3 { font-size: 1.2rem; }
+.campaign-case .campaign-rules p { margin-top: 12px; font-size: .95rem; }
+.campaign-case .campaign-subheading-row { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 40px; align-items: start; margin-bottom: 28px; }
+.campaign-case .campaign-subheading-row p { font-size: .95rem; }
+.campaign-case .campaign-variants .media-figure { aspect-ratio: 3 / 4; display: grid; align-items: center; }
+.campaign-case .campaign-variants .media-figure img { height: auto; max-height: 100%; }
+.campaign-case .campaign-adaptation-rule { display: grid; grid-template-columns: 210px minmax(0,1fr); gap: 28px; margin-block: 32px 48px; padding-top: 26px; border-top: 1px solid var(--line); }
+.campaign-case .campaign-adaptation-rule h3 { color: var(--accent-deep); font-size: 1.2rem; }
+.campaign-case .campaign-pair .media-figure { aspect-ratio: 714 / 294; }
+.campaign-case .campaign-workflow { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px; padding-block: 30px 34px; border-block: 1px solid var(--line); }
+.campaign-case .campaign-workflow span { display: block; color: var(--accent); font-size: 1.6rem; margin-bottom: 20px; }
+.campaign-case .campaign-workflow h3 { font-size: 1.2rem; }
+.campaign-case .campaign-workflow p { margin-top: 12px; font-size: 1rem; }
+.campaign-case .campaign-review { padding-block: 34px; gap: 60px; }
+.campaign-case .campaign-review p { margin-top: 18px; }
+.campaign-case .campaign-closing { display: flex; justify-content: space-between; align-items: center; gap: 32px; margin-top: 28px; padding-block: 40px; border-top: 1px solid var(--line); }
+.campaign-case .campaign-closing h2 { font-size: clamp(1.4rem,2.4vw,2rem); }
+.campaign-case .campaign-closing p { margin-top: 14px; font-size: .95rem; }
+.campaign-case .campaign-closing a { flex-shrink: 0; }
+.campaign-case .campaign-back { display: inline-block; color: var(--muted); font-size: .9rem; }
+@media (max-width: 1100px) {
+  .campaign-case .campaign-shell { padding-inline: var(--page-x); }
+  .campaign-case .campaign-hero { gap: 32px; }
+  .campaign-case .campaign-page-layout { grid-template-columns: 180px minmax(0,1fr); gap: 30px; }
+  .campaign-case .campaign-page-blocks { gap: 36px 20px; }
+  .campaign-case .campaign-workflow { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 720px) {
+  .campaign-case .campaign-hero { grid-template-columns: 1fr; padding: 112px 0 36px; }
+  .campaign-case .campaign-hero h1 { font-size: clamp(2.75rem,11vw,4rem); }
+  .campaign-case .campaign-goals { grid-template-columns: 1fr; padding: 0 24px; }
+  .campaign-case .campaign-goals article { padding: 22px 0; }
+  .campaign-case .campaign-goals article + article { border-left: 0; border-top: 1px solid rgba(255,255,255,.25); }
+  .campaign-case .campaign-goals h2 { font-size: 2rem; }
+  .campaign-case .campaign-section { padding-top: 56px; }
+  .campaign-case :is(.campaign-section-heading,.campaign-visual-grid,.campaign-page-layout,.campaign-triptych,.campaign-pair,.campaign-rules,.campaign-review,.campaign-subheading-row,.campaign-adaptation-rule) { grid-template-columns: 1fr; }
+  .campaign-case .campaign-section-heading { gap: 16px; margin-bottom: 28px; }
+  .campaign-case .campaign-visual-grid { gap: 32px; }
+  .campaign-case .campaign-language { gap: 24px; margin-top: 28px; }
+  .campaign-case .campaign-page-overview { width: 212px; margin-inline: auto; }
+  .campaign-case .campaign-page-blocks { grid-template-columns: 1fr; gap: 32px; }
+  .campaign-case .campaign-block-art { aspect-ratio: auto; }
+  .campaign-case .campaign-block-art img { height: auto; }
+  .campaign-case .campaign-flow { margin-top: 32px; }
+  .campaign-case .campaign-triptych { gap: 30px; }
+  .campaign-case .campaign-rules { gap: 24px; margin-bottom: 36px; }
+  .campaign-case .campaign-subheading-row { gap: 14px; }
+  .campaign-case .campaign-variants .media-figure { aspect-ratio: auto; }
+  .campaign-case .campaign-adaptation-rule { gap: 12px; margin-bottom: 36px; }
+  .campaign-case .campaign-review { gap: 30px; }
+  .campaign-case .campaign-closing { flex-direction: column; align-items: start; }
+}
+@media (max-width: 360px) {
+  .campaign-case .campaign-workflow { grid-template-columns: 1fr; }
+}

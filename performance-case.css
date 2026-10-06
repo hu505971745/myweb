@@ -1,0 +1,135 @@
+/* Scoped to the approved performance case layout; shared palette and navigation stay native. */
+.performance-case { --perf-gap: clamp(20px, 2.2vw, 32px); }
+.performance-case .perf-shell { width: min(100%, var(--max-width)); margin-inline: auto; padding: 0 clamp(20px, 6.1vw, 88px) 48px; }
+.performance-case :is(h1,h2,h3,h4,p,dl,dd,figure) { margin: 0; }
+.performance-case :is(h1,h2,h3) { letter-spacing: -.035em; }
+.performance-case p { color: var(--muted); font-size: 1.05rem; line-height: 1.85; }
+.performance-case h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.35; }
+.performance-case h3 { font-size: clamp(1.2rem, 1.85vw, 1.7rem); line-height: 1.45; }
+.performance-case .perf-eyebrow { color: var(--accent-deep); font-size: .78rem; font-weight: 600; letter-spacing: .12em; line-height: 1.6; }
+.performance-case .media-figure { min-width: 0; margin: 0; overflow: hidden; background: transparent; }
+.performance-case .media-figure img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; }
+.performance-case .media-figure img[data-lightbox] { cursor: zoom-in; }
+.performance-case .perf-square { aspect-ratio: 1; }
+.performance-case .perf-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr); gap: clamp(28px, 3vw, 44px); align-items: center; padding: 166px 0 60px; }
+.performance-case .perf-hero-copy > .perf-eyebrow { margin-bottom: 22px; }
+.performance-case .perf-hero h1 { font-size: clamp(2.75rem, 5vw, 4.75rem); font-weight: 750; line-height: 1.17; letter-spacing: -.05em; }
+.performance-case .perf-lead { max-width: 560px; margin-top: 26px; font-size: clamp(1rem, 1.55vw, 1.3rem); }
+.performance-case .perf-meta { display: flex; flex-wrap: wrap; gap: 20px 26px; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); }
+.performance-case .perf-meta dt { margin-bottom: 8px; color: var(--dim); font-size: .78rem; }
+.performance-case .perf-meta dd { color: var(--text); font-size: .92rem; line-height: 1.6; }
+.performance-case .perf-hero-art { position: relative; width: 100%; aspect-ratio: 1.32; background: radial-gradient(ellipse at 70% 45%, var(--surface-2), transparent 65%); }
+.performance-case .perf-hero-art .media-figure { position: absolute; aspect-ratio: 1; box-shadow: 0 22px 42px rgba(24,60,105,.1); }
+.performance-case .perf-hero-first { width: 54%; left: 0; top: 5%; z-index: 2; }
+.performance-case .perf-hero-second { width: 51%; right: 0; bottom: 4%; }
+.performance-case .perf-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-block: 30px; color: var(--on-accent); background: linear-gradient(110deg, var(--accent-deep), var(--accent-strong)); }
+.performance-case .perf-metrics article { min-width: 0; padding: 0 clamp(18px, 2.6vw, 38px); }
+.performance-case .perf-metrics article + article { border-left: 1px solid rgba(255,255,255,.25); }
+.performance-case .perf-metrics h2 { color: var(--on-accent-muted); font-size: clamp(.83rem, 1.15vw, 1.05rem); font-weight: 500; letter-spacing: 0; }
+.performance-case .perf-metrics strong { display: block; margin-block: 12px 10px; font-size: clamp(1.9rem, 4.05vw, 3.65rem); line-height: 1.2; font-weight: 650; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.performance-case .perf-metrics p { color: var(--on-accent-muted); font-size: .92rem; }
+.performance-case .perf-metric-note { margin-top: 14px; font-size: .82rem; color: var(--dim); }
+.performance-case .perf-section { padding-top: clamp(60px, 6.4vw, 92px); }
+.performance-case .perf-heading { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 36px; align-items: end; margin-bottom: 34px; }
+.performance-case .perf-heading .perf-eyebrow { margin-bottom: 12px; }
+.performance-case .perf-principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; padding-block: 30px 34px; border-block: 1px solid var(--line); }
+.performance-case .perf-principles article + article { border-left: 1px solid var(--line); padding-left: 30px; }
+.performance-case .perf-step { display: block; color: var(--accent); font-size: 1.2rem; margin-bottom: 18px; }
+.performance-case .perf-principles p { margin-top: 14px; font-size: 1rem; }
+.performance-case .perf-creatives { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--perf-gap); align-items: stretch; }
+.performance-case .perf-creatives > article { display: flex; flex-direction: column; min-width: 0; }
+.performance-case .perf-creative-copy { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding-top: 24px; }
+.performance-case .perf-tag { display: inline-block; padding: 7px 11px; color: var(--accent-deep); background: var(--surface-2); font-size: .78rem; border-radius: 4px; }
+.performance-case .perf-creative-copy h3 { margin-block: 16px 12px; }
+.performance-case .perf-creative-copy > p { flex: 1; font-size: 1rem; }
+.performance-case .perf-creative-metrics { display: grid; width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+.performance-case .perf-creative-metrics > div { display: flex; flex-direction: column; }
+.performance-case .perf-creative-metrics dt { order: 2; }
+.performance-case .perf-creative-metrics dd { order: 1; }
+.performance-case .perf-creative-metrics dd { color: var(--accent-deep); font-size: clamp(1.3rem, 2.2vw, 2rem); font-weight: 650; font-variant-numeric: tabular-nums; }
+.performance-case .perf-creative-metrics dt { margin-top: 8px; color: var(--muted); font-size: .78rem; }
+.performance-case .perf-data { margin-top: 52px; }
+.performance-case .perf-data-title { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 22px; }
+.performance-case .perf-data-title p { font-size: .88rem; }
+.performance-case .perf-table-scroll { width: 100%; max-width: 100%; overflow-x: auto; }
+.performance-case table { width: 100%; min-width: 540px; border-collapse: collapse; font-size: 1.05rem; text-align: left; }
+.performance-case :is(th,td) { padding: 20px 22px; border-bottom: 1px solid var(--line); }
+.performance-case thead { background: var(--surface-2); color: var(--muted); }
+.performance-case thead th { font-size: .9rem; font-weight: 500; }
+.performance-case tbody th { font-weight: 500; }
+.performance-case td { font-variant-numeric: tabular-nums; }
+.performance-case .perf-best { color: var(--accent-deep); font-weight: 700; }
+.performance-case .perf-data-insight { margin-block: 24px 30px; font-size: 1rem; }
+.performance-case .perf-source-label { margin-bottom: 14px; color: var(--dim); font-size: .82rem; }
+.performance-case .perf-source { border: 1px solid var(--line); padding: clamp(10px, 1.25vw, 18px); background: var(--surface); }
+.performance-case .perf-source-note { margin-top: 14px; font-size: .82rem; }
+.performance-case .perf-product + .perf-product { padding-top: 34px; margin-top: 36px; border-top: 1px solid var(--line); }
+.performance-case .perf-product + .perf-product[aria-labelledby="perf-pump"] { padding-top: 0; margin-top: 24px; border-top: 0; }
+.performance-case .perf-product > h3 { margin-bottom: 26px; }
+.performance-case .perf-triptych { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 1.7vw, 24px); }
+.performance-case .perf-caption { margin-top: 12px; text-align: center; font-size: .85rem; }
+.performance-case .perf-minor-source { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 34px; align-items: center; margin-top: 28px; }
+.performance-case .perf-minor-source h4 { font-size: 1.1rem; }
+.performance-case .perf-minor-source p { margin-top: 10px; font-size: .88rem; }
+.performance-case .perf-product-heading { display: flex; justify-content: space-between; gap: 30px; align-items: baseline; margin-bottom: 28px; }
+.performance-case .perf-product-heading p { font-size: .95rem; }
+.performance-case .perf-plus-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--perf-gap); width: min(100%, 840px); margin-inline: auto; }
+.performance-case .perf-more { margin-top: 28px; border-block: 1px solid var(--line); }
+.performance-case .perf-more summary { display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; color: var(--accent-deep); cursor: pointer; list-style: none; }
+.performance-case .perf-more summary::-webkit-details-marker { display: none; }
+.performance-case .perf-more[open] summary > span { transform: rotate(45deg); }
+.performance-case .perf-more > p { margin-bottom: 20px; font-size: .95rem; }
+.performance-case .perf-more > .perf-source { margin-bottom: 24px; }
+.performance-case .perf-extra-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; width: 100%; gap: clamp(16px, 1.7vw, 24px); padding-bottom: 24px; }
+.performance-case .perf-workflow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; padding-block: 32px; border-block: 1px solid var(--line); }
+.performance-case .perf-workflow .perf-step { font-size: 2rem; font-weight: 500; }
+.performance-case .perf-workflow h3 { font-size: clamp(1.05rem, 1.6vw, 1.4rem); }
+.performance-case .perf-workflow p { font-size: .95rem; margin-top: 14px; }
+.performance-case .perf-review { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; margin-top: 32px; }
+.performance-case .perf-review p { margin-top: 14px; font-size: 1rem; }
+.performance-case .perf-closing { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-block: 42px; margin-top: 60px; border-top: 1px solid var(--line); }
+.performance-case .perf-closing h2 { font-size: clamp(1.4rem, 2.4vw, 2rem); }
+.performance-case .perf-closing p { margin-top: 12px; font-size: .95rem; }
+.performance-case .perf-back { display: flex; justify-content: space-between; width: fit-content; min-height: 44px; align-items: center; gap: 24px; color: var(--muted); }
+.performance-case .perf-back:hover { color: var(--accent-deep); }
+@media (max-width: 1000px) {
+  .performance-case .perf-shell { padding-inline: var(--page-x); }
+  .performance-case .perf-principles { gap: 20px; }
+  .performance-case .perf-principles article + article { padding-left: 20px; }
+  .performance-case .perf-minor-source { grid-template-columns: 150px minmax(0, 1fr); gap: 24px; }
+  .performance-case .perf-workflow { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+}
+@media (max-width: 720px) {
+  .performance-case .perf-hero { grid-template-columns: 1fr; gap: 30px; padding-top: 112px; padding-bottom: 32px; }
+  .performance-case .perf-hero h1 { font-size: clamp(2.5rem, 10.2vw, 4rem); }
+  .performance-case .perf-hero-art { width: min(100%, 520px); justify-self: center; }
+  .performance-case .perf-meta { gap: 18px 24px; }
+  .performance-case .perf-metrics { grid-template-columns: 1fr; padding: 0 24px; }
+  .performance-case .perf-metrics article { padding: 22px 0; }
+  .performance-case .perf-metrics article + article { border-left: 0; border-top: 1px solid rgba(255,255,255,.25); }
+  .performance-case .perf-metrics h2 { font-size: 1rem; }
+  .performance-case .perf-metrics strong { font-size: 2.65rem; }
+  .performance-case .perf-section { padding-top: 54px; }
+  .performance-case .perf-heading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 26px; }
+  .performance-case .perf-heading > p { font-size: 1rem; }
+  .performance-case .perf-principles { grid-template-columns: 1fr; gap: 24px; }
+  .performance-case .perf-principles article + article { border-left: 0; padding-left: 0; padding-top: 24px; border-top: 1px solid var(--line); }
+  .performance-case .perf-step { margin-bottom: 12px; }
+  .performance-case .perf-creatives { grid-template-columns: 1fr; gap: 40px; }
+  .performance-case .perf-creative-metrics dd { font-size: 1.7rem; }
+  .performance-case .perf-data-title { flex-direction: column; gap: 10px; }
+  .performance-case .perf-data { margin-top: 40px; }
+  .performance-case :is(th,td) { padding: 16px; }
+  .performance-case .perf-triptych { grid-template-columns: 1fr; gap: 26px; }
+  .performance-case .perf-minor-source { grid-template-columns: 1fr; gap: 18px; }
+  .performance-case .perf-product-heading { flex-direction: column; gap: 12px; }
+  .performance-case .perf-plus-pair { grid-template-columns: 1fr; }
+  .performance-case .perf-workflow { gap: 26px 20px; }
+  .performance-case .perf-review { grid-template-columns: 1fr; gap: 30px; }
+  .performance-case .perf-closing { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 360px) {
+  .performance-case .perf-workflow { grid-template-columns: 1fr; }
+  .performance-case .perf-creative-metrics { gap: 10px; }
+  .performance-case .perf-creative-metrics dd { font-size: 1.45rem; }
+}

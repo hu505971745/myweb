@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1440" />
+    <meta
+      name="description"
+      content="胡飞的视觉设计作品集，展示品牌视觉、电商营销、3D产品资产与AI创意工作流，以及从设计策略到成果交付的实践。"
+    />
+    <meta name="theme-color" content="#f4f7fb" />
+    <title>胡飞 | 资深视觉设计师 · 品牌视觉与3D作品集</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/site/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="胡飞 · 视觉设计作品集" />
+    <meta property="og:title" content="胡飞 | 资深视觉设计师 · 品牌视觉与3D作品集" />
+    <meta property="og:description" content="品牌视觉、电商营销、3D产品资产与AI创意工作流。从设计策略到成果交付，呈现真实项目实践。" />
+    <meta property="og:image" content="./assets/site/share-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="胡飞，资深视觉设计师。品牌视觉、3D与AI创意。" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="胡飞 | 资深视觉设计师 · 品牌视觉与3D作品集" />
+    <meta name="twitter:description" content="品牌视觉、电商营销、3D产品资产与AI创意工作流。从设计策略到成果交付，呈现真实项目实践。" />
+    <meta name="twitter:image" content="./assets/site/share-card.png" />
+    <script>
+      (() => {
+        const root = document.documentElement;
+        // Mobile browsers fit the same 1440px desktop canvas in both orientations.
+        // Keep pinch zoom available; no separate mobile reflow is applied.
+        const mobileCanvas = matchMedia("(pointer: coarse)").matches;
+        root.classList.toggle("desktop-scaled-mobile", mobileCanvas);
+        if (mobileCanvas) {
+          const viewport = document.querySelector('meta[name="viewport"]');
+          let previousWidth = 0;
+          const fitCanvas = () => {
+            const width = Math.round(window.visualViewport
+              ? visualViewport.width * visualViewport.scale : screen.width);
+            if (!width || Math.abs(width - previousWidth) < 2) return;
+            previousWidth = width;
+            root.style.setProperty("--mobile-content-zoom", Math.max(1, width - 36) / width);
+            root.style.setProperty("--mobile-ui-unit", `${1440 / width}px`);
+            viewport.content = `width=1440, initial-scale=${width / 1440}`;
+          };
+          fitCanvas();
+          window.addEventListener("resize", fitCanvas, { passive: true });
+          window.addEventListener("orientationchange", () => requestAnimationFrame(fitCanvas));
+          // Touch devices open directly into the page; desktop keeps its curtain.
+          return;
+        }
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        root.dataset.entrance = "loading";
+        // Release the page even if the animation script fails to load.
+        window.__hfEntranceFallback = setTimeout(() => {
+          document.dispatchEvent(new Event("portfolio:entrance-timeout"));
+          delete root.dataset.entrance;
+          document.getElementById("portfolio-entrance")?.remove();
+          const app = document.getElementById("app");
+          if (app) app.inert = false;
+          document.dispatchEvent(new Event("portfolio:entrance-reveal"));
+        }, 4500);
+      })();
+    </script>
+    <link rel="stylesheet" href="./styles.css?v=20261005-brand-heading-blocks" />
+    <link rel="stylesheet" href="./performance-case.css?v=20261006-pump-spacing" />
+    <link rel="stylesheet" href="./douyin-case.css?v=20261005-douyin-layout" />
+    <link rel="stylesheet" href="./campaign-case.css?v=20261005-campaign-layout" />
+    <link rel="stylesheet" href="./three-d-case.css?v=20261005-3d-layout" />
+    <link rel="stylesheet" href="./brand-upgrade-case.css?v=20261006-comments-effects" />
+    <link rel="stylesheet" href="./case-typography.css?v=20261006-comments-effects" />
+    <link rel="stylesheet" href="./growth-text.css?v=20261006-growth" />
+    <link rel="stylesheet" href="./scroll-reveal.css?v=20261006-entrance-overlap" />
+    <link rel="stylesheet" href="./entrance-animation.css?v=20261006-one-second-fade" />
+    <link rel="stylesheet" href="./home-projects.css?v=20261006-heavier-project-titles" />
+    <link rel="stylesheet" href="./launch-fixes.css?v=20261006-mobile-case-text" />
+    <script src="./entrance-animation.js?v=20261006-reveal-delay-150" defer></script>
+  </head>
+  <body>
+    <div id="portfolio-entrance" class="portfolio-entrance" role="dialog" aria-modal="true" aria-label="胡飞作品集开场">
+      <div class="entrance-panels" aria-hidden="true">
+        <div class="entrance-panel entrance-panel-top"></div>
+        <div class="entrance-panel entrance-panel-bottom"></div>
+      </div>
+      <div class="entrance-identity">
+        <p class="entrance-name" aria-label="胡飞，资深视觉设计师">
+          <span class="entrance-name-line" aria-hidden="true"><span>胡</span><span>飞</span></span>
+          <span class="entrance-role" aria-hidden="true"><span>资</span><span>深</span><span>视</span><span>觉</span><span>设</span><span>计</span><span>师</span></span>
+        </p>
+      </div>
+      <button class="entrance-skip" type="button">跳过<span aria-hidden="true">Esc</span></button>
+    </div>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <div id="app"></div>
+    <script type="module" src="./app.js?v=20261006-mobile-case-text"></script>
+  </body>
+</html>
+

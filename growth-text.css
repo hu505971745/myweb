@@ -1,0 +1,27 @@
+.hero .hero-growth-title { line-height: 1.15; }
+.hero .hero-growth-title .hero-title-line--first { color: var(--text); }
+.hero .hero-growth-title .growth-text {
+  position: relative;
+  width: fit-content;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+.hero .hero-growth-title .growth-text-base,
+.hero .hero-growth-title .growth-text-fill {
+  color: var(--accent);
+  -webkit-text-stroke: 0;
+}
+.hero .hero-growth-title .growth-text-fill {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  clip-path: inset(0);
+}
+.hero .hero-growth-title .growth-text.is-growing .growth-text-base {
+  color: rgba(75, 141, 255, .18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-growth-title .growth-text.is-growing .growth-text-base { color: var(--accent); }
+  .hero .hero-growth-title .growth-text-fill { clip-path: none; }
+}

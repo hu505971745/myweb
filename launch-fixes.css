@@ -1,0 +1,92 @@
+/* Desktop overlap correction; keep the approved large-screen composition. */
+.hero-copy > p { max-width: min(100%, 520px); }
+@media (min-width: 721px) and (max-width: 1200px) {
+  .hero-copy { max-width: 52%; }
+  .hero-portrait { right: clamp(28px, 4vw, 48px); bottom: 0; height: clamp(440px, 48vw, 580px); }
+  .hero-stamp { right: 24px; width: 100px; height: 100px; }
+}
+
+/* Keep a 1440px composition, then fit it inside two physical 18px gutters.
+   UI units compensate for viewport scaling so navigation remains touch sized. */
+html.desktop-scaled-mobile {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  --page-x: 0px;
+  --mobile-content-zoom: 1;
+  --mobile-ui-unit: 1px;
+}
+.desktop-scaled-mobile #app > main,
+.desktop-scaled-mobile #app > .site-footer {
+  width: 1440px;
+  margin-inline: auto;
+  zoom: var(--mobile-content-zoom);
+}
+.desktop-scaled-mobile .grid-shell,
+.desktop-scaled-mobile .brand-upgrade-case .bu-shell,
+.desktop-scaled-mobile .performance-case .perf-shell,
+.desktop-scaled-mobile .three-d-case .three-d-shell,
+.desktop-scaled-mobile .campaign-case .campaign-shell,
+.desktop-scaled-mobile .douyin-shell { padding-inline: 0; }
+
+.desktop-scaled-mobile body { padding-bottom: calc(90 * var(--mobile-ui-unit) + env(safe-area-inset-bottom)); }
+.desktop-scaled-mobile .desktop-header,
+.desktop-scaled-mobile .portfolio-entrance { display: none; }
+.desktop-scaled-mobile .hero-intro .hero-copy,
+.desktop-scaled-mobile .hero-intro .hero-portrait,
+.desktop-scaled-mobile .hero-intro .hero-stamp {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  animation: none;
+}
+.desktop-scaled-mobile .mobile-dock {
+  position: fixed;
+  z-index: 100;
+  top: auto;
+  left: calc(18 * var(--mobile-ui-unit));
+  right: calc(18 * var(--mobile-ui-unit));
+  bottom: calc(12 * var(--mobile-ui-unit) + env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: calc(3 * var(--mobile-ui-unit));
+  min-height: 0;
+  padding: calc(5 * var(--mobile-ui-unit));
+  border: 1px solid var(--line-strong);
+  border-radius: calc(12 * var(--mobile-ui-unit));
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 calc(8 * var(--mobile-ui-unit)) calc(28 * var(--mobile-ui-unit)) rgba(23, 59, 106, .12);
+  backdrop-filter: blur(18px);
+}
+.desktop-scaled-mobile .mobile-dock a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: calc(48 * var(--mobile-ui-unit));
+  gap: calc(4 * var(--mobile-ui-unit));
+  padding: calc(4 * var(--mobile-ui-unit)) 0;
+  border-radius: calc(8 * var(--mobile-ui-unit));
+  color: var(--muted);
+  font-size: calc(11 * var(--mobile-ui-unit));
+  line-height: 1.2;
+}
+.desktop-scaled-mobile .mobile-dock .dock-icon {
+  font-size: calc(20 * var(--mobile-ui-unit));
+  line-height: 1;
+}
+.desktop-scaled-mobile .mobile-dock a.is-active {
+  background: var(--surface-2);
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+main:focus { outline: none; }
+
+/* Short project copy fits its column without browser-induced extra lines. */
+.desktop-scaled-mobile .case-copy-single-line {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  min-width: 0;
+}
